@@ -88,7 +88,7 @@ async function main() {
     try {
       console.log(`\n>> Fetching last 2 messages from: ${channel}...`);
       // جلب آخر رسالتين (limit: 2)
-      const messages = await client.getMessages(channel, { limit: 2 });
+      const messages = await client.getMessages(channel, { limit: 20 });
       
       for (const msg of messages) {
         // نمرر الرسالة للمعالج يدوياً
