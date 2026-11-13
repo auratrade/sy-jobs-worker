@@ -62,11 +62,11 @@ async function handler(event: NewMessageEvent) {
 
   // إرسال البيانات إلى Next.js
   try {
-    const res = await fetch("sy-jobs-production.up.railway.app", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jobData),
-    });
+   const res = await fetch("https://sy-jobs-production.up.railway.app/api/jobs/ingest", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(jobData),
+});
     
     if (res.ok) {
       console.log("   ✅ Sent to Next.js successfully.");
